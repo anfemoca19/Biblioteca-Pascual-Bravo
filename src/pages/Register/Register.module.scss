@@ -1,0 +1,224 @@
+
+@media only screen and  (max-width: 480px) {
+  .container-register {
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-logo {
+    height: 120px;
+    width: 400px;
+  }
+
+  .form-register {
+    box-shadow: 0px 6px 36px 14px #4c0ba2b4;
+    border-color: #7929e2;
+    margin-top: 30px;
+    width: 360px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+  }
+
+  .title {
+    color: #7929e2;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .style-input {
+    border: 2px solid #7929e2;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: black;
+    font-size: 13px;
+  }
+  .container-btn-crear{
+    display: flex;
+    justify-content: center;
+  }
+
+  .check-color {
+    cursor: pointer;
+    border: 2px solid #7929e2;
+    appearance: none;
+  }
+  .check-color:checked {
+    background-color: #7929e2;
+    border-color: #7929e2;
+  }
+
+  .color-text-check {
+    color: #7929e2;
+  }
+
+  .border-button-register {
+    border: none;
+    color: #7929e2;
+    box-shadow: 0px 0px 18px -2px rgb(205 205 205 / 50%);
+    border-radius: 2px;
+    font-size: 12px;
+    height: 20px;
+    width: auto;
+    background-color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 10px;
+  }
+}
+
+
+@media only screen and  (min-width:481px) and (max-width:1000px){
+  .container-register {
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-logo {
+    height: 120px;
+    width: 260px;
+  }
+
+  .form-register {
+    // box-shadow: 0px 6px 36px 14px #4c0ba2b4;
+    border-color: #5634D1;
+    margin-top: 30px;
+    width: 360px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+  }
+
+  .title {
+    color: #5634D1;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .style-input {
+    border: 2px solid #5634D1;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: black;
+  }
+
+  .container-btn-crear{
+    display: flex;
+    justify-content: center;
+  }
+  .check-color {
+    cursor: pointer;
+    border: 2px solid #5634D1;
+    appearance: none;
+  }
+  .check-color:checked {
+    background-color: #5634D1;
+    border-color: #5634D1;
+  }
+
+  .color-text-check {
+    color: #5634D1;
+  }
+
+  .border-button-register {
+    border: none;
+    color: #5634D1;
+    box-shadow: 0px 0px 18px -2px rgb(205 205 205 / 50%);
+    border-radius: 2px;
+    font-size: 12px;
+    height: 20px;
+    width: auto;
+    background-color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 10px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container-register {
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-logo {
+    height: 120px;
+    width: 400px;
+  }
+
+  .form-register {
+    // box-shadow: 0px 6px 36px 14px #4c0ba2b4;
+    border-color: #5634D1;
+    margin-top: 30px;
+    width: 360px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+  }
+
+  .title {
+    color: #5634D1;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .style-input {
+    border: 2px solid #5634D1;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: black;
+  }
+
+  .container-btn-crear{
+    display: flex;
+    justify-content: center;
+  }
+  .check-color {
+    cursor: pointer;
+    border: 2px solid #5634D1;
+    appearance: none;
+  }
+  .check-color:checked {
+    background-color: #5634D1;
+    border-color: #5634D1;
+  }
+
+  .color-text-check {
+    color: #5634D1;
+  }
+
+  .border-button-register {
+    border: none;
+    color: #5634D1;
+    box-shadow: 0px 0px 18px -2px rgb(205 205 205 / 50%);
+    border-radius: 2px;
+    font-size: 12px;
+    height: 20px;
+    width: auto;
+    background-color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 10px;
+  }
+}

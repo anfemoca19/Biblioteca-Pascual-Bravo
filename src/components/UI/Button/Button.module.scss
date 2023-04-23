@@ -1,0 +1,241 @@
+
+@media only screen and (max-width: 480px) {
+  .btn-style {
+    color: white;
+    background-color: #5634D1;
+    height: 40px;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center
+    ;
+    &:hover {
+      color: white;
+      background-color: #5634D1;
+    }
+  }
+  .btn-primary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform:translate(-50%,-50%) ;
+    &:hover{
+      background-color:  #afdb00;
+      &:active{
+        display: none;
+      }
+    }
+  }
+
+  .btn-secondary {
+    background-color: #6f27cd;
+    outline: none;
+    font-size: 11px;
+    height: 30px;
+    border-radius: 5px
+  }
+
+  .btn-terciary{
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #7929e2;
+    border-radius: 10px;
+    height: 25px;
+    outline: none;
+    & :hover{
+      background-color: #afdb00;
+    }
+  }
+
+  .btn-cuartary{
+    background-color: #afdb00;
+    outline: none;
+    padding: 0;
+    font-size: 12px;
+    height: 30px;
+    & :hover{
+      background-color: #6f27cd;
+    }
+  }
+
+  .btn-fifth{
+    background-color: none;
+    border-radius: 15px;
+    & :hover{
+      border-radius: 10px;
+      background-color:  #afdb00;
+      }
+  }
+}
+@media only screen and  (min-width:481px) and (max-width:1000px){
+  .btn-style {
+    color: white;
+    background-color: #7929e2;
+    height: 40px;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    &:hover {
+      color: white;
+      background-color: #6f27cd;
+    }
+  }
+  .btn-primary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform:translate(30%,-50%) ;
+    &:hover{
+      background-color:  #afdb00;
+      &:active{
+        display: none;
+      }
+    }
+  }
+  
+  .btn-secondary {
+    background-color: #6f27cd;
+    outline: none;
+    font-size: 11px;
+    height: 30px;
+    border-radius: 5px
+  }
+
+  .btn-terciary{
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #7929e2;
+    border-radius: 10px;
+    height: 25px;
+    outline: none;
+    & :hover{
+      background-color: #afdb00;
+    }
+  }
+
+  .btn-cuartary{
+    background-color: #afdb00;
+    outline: none;
+    padding: 0;
+    font-size: 12px;
+    height: 30px;
+    & :hover{
+      background-color: #6f27cd;
+    }
+  }
+
+  .btn-fifth{
+    background-color: none;
+    border-radius: 15px;
+    & :hover{
+      border-radius: 10px;
+      background-color:  #afdb00;
+      }
+  }
+  
+  .btn-modal{
+    width: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .btn-style {
+    color: white;
+    background-color: #5634D1;
+    height: 40px;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    &:hover {
+      color: white;
+      background-color: #6f27cd;
+    }
+  }
+
+  .btn-primary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+
+    transform:translate(-50%,-50%) ;
+    &:hover{
+      background-color:  #afdb00;
+      &:active{
+        display: none;
+      }
+    }
+
+
+  }
+  .btn-secondary {
+    background-color: #6f27cd;
+    outline: none;
+    font-size: 11px;
+    height: 30px;
+    border-radius: 5px
+  }
+
+  .btn-terciary{
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #7929e2;
+    border-radius: 10px;
+    height: 25px;
+    outline: none;
+    & :hover{
+      background-color: #afdb00;
+    }
+  }
+
+  .btn-cuartary{
+    background-color: #afdb00;
+    outline: none;
+    padding: 0;
+    font-size: 12px;
+    height: 30px;
+    & :hover{
+      background-color: #6f27cd;
+    }
+  }
+
+  .btn-fifth{
+    background-color: none;
+    border-radius: 15px;
+    & :hover{
+      border-radius: 10px;
+      background-color:  #afdb00;
+      }
+  }
+  .btn-modal{
+    width: 100px;
+  }
+  .btn-next{
+    color: white;
+    background-color: #7929e2;
+    height: 40px;
+    width: 58%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    &:hover {
+      color: white;
+      background-color: #6f27cd;
+    }
+  }
+  
+  .btn-empresa{
+    border-radius: 10px;
+    border:1px solid  #7929e2; ;
+    color: #7929e2;
+    padding: 5px;
+    background-color: transparent;
+    align-items: center;
+  }
+}

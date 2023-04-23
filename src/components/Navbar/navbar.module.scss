@@ -1,0 +1,318 @@
+
+
+@media only screen and  (max-width: 480px) {
+  .menu-mobile{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: space-around;
+  }
+
+  .nav-icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 3px;
+    background-image: url("../../imagenes/icono-menu-1-fondo-blanco.png");
+  }
+
+  .text-menu {
+    display: none;
+    font-size: 13px;
+  }
+
+  li.nav-item {
+    &.active {
+      a {
+        color: #4B20A3;
+        background-color: transparent;
+        .text-menu {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .nav-icon,
+  .nav-item .nav-link:hover > .nav-icon {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .icon-config {
+    background-image: url("../../imagenes/icono-menu-2-fondo-blanco.png");
+  }
+
+  .icon-user {
+    background-image: url("../../imagenes/icono-menu-3-fondo-blanco.png");
+  }
+
+  .icon-categories {
+    background-image: url("../../imagenes/icono-menu-4-fondo-blanco.png");
+  }
+  .icon-course {
+    background-image: url("../../imagenes/icono-menu-5-fondo-blanco.png");
+  }
+  .nav-item {
+    list-style: none;
+    border-radius: 10px;
+    &.active {
+      a {
+        color: #fff;
+        background-color: #4b209e;
+        border-radius: 10px;
+      }
+      .nav-link .nav-icon {
+        border-radius: 30px;
+        background-image: url("../../imagenes/icono-menu-1-fondo-color.png");
+      }
+      .nav-link .icon-config {
+        border-radius: 30px;
+        background-image: url("../../imagenes/icono-menu-2-fondo-color.png");
+      }
+      .nav-link .icon-user {
+        background-image: url("../../imagenes/icono-menu-3-fondo-color.png");
+      }
+      .nav-link .icon-categories {
+        background-image: url("../../imagenes/icono-menu-4-fondo-color.png");
+      }
+      .nav-link .icon-course {
+        background-image: url("../../imagenes/icono-menu-5-fondo-color.png");
+      }
+    }
+  }
+  .nav-item .nav-link {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 5px;
+    color: #4b209e;
+    font-weight: bold;
+    border-radius: 10px;
+    align-items: center;
+  }
+
+  .nav-item .nav-link:hover {
+    color: #2c1868;
+    border-radius: 10px;
+  }
+  .nav-item .nav-link:hover > .nav-icon {
+    background-image: url("../../imagenes/icono-menu-1-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-config {
+    background-image: url("../../imagenes/icono-menu-2-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-user {
+    background-image: url("../../imagenes/icono-menu-3-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-categories {
+    background-image: url("../../imagenes/icono-menu-4-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-course {
+    background-image: url("../../imagenes/icono-menu-5-fondo-color.png");
+  }
+}
+
+// Tablet
+@media only screen and  (min-width:481px) and (max-width:1000px){ 
+  
+  .menu-mobile{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: space-around;
+  }
+
+  .nav-icon {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 3px;
+    background-image: url("../../imagenes/icono-menu-1-fondo-blanco.png");
+  }
+
+  a .text-menu{
+    display: none ;
+    font-size: 16px;
+  }
+
+  li.nav-item {
+    &.active {
+      a {
+        color: #4B20A3;
+        background-color: transparent;
+        .text-menu {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  .nav-icon,
+  .nav-item .nav-link:hover > .nav-icon {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .icon-config {
+    background-image: url("../../imagenes/icono-menu-2-fondo-blanco.png");
+  }
+
+  .icon-user {
+    background-image: url("../../imagenes/icono-menu-3-fondo-blanco.png");
+  }
+
+  .icon-categories {
+    background-image: url("../../imagenes/icono-menu-4-fondo-blanco.png");
+  }
+  .icon-course {
+    background-image: url("../../imagenes/icono-menu-5-fondo-blanco.png");
+  }
+  .nav-item {
+    list-style: none;
+    border-radius: 10px;
+    &.active {
+      a {
+        color: #fff;
+        background-color: #4b209e;
+        border-radius: 10px;
+      }
+      .nav-link .nav-icon {
+        background-image: url("../../imagenes/icono-menu-1-fondo-color.png");
+      }
+      .nav-link .icon-config {
+        background-image: url("../../imagenes/icono-menu-2-fondo-color.png");
+      }
+      .nav-link .icon-user {
+        background-image: url("../../imagenes/icono-menu-3-fondo-color.png");
+      }
+      .nav-link .icon-categories {
+        background-image: url("../../imagenes/icono-menu-4-fondo-color.png");
+      }
+      .nav-link .icon-course {
+        background-image: url("../../imagenes/icono-menu-5-fondo-color.png");
+      }
+    }
+  }
+  .nav-item .nav-link {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 5px;
+    color: #4b209e;
+    font-weight: bold;
+    border-radius: 10px;
+    align-items: center;
+  }
+
+  .nav-item .nav-link:hover {
+    color: #2c1868;
+    border-radius: 10px;
+  }
+  .nav-item .nav-link:hover > .nav-icon {
+    background-image: url("../../imagenes/icono-menu-1-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-config {
+    background-image: url("../../imagenes/icono-menu-2-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-user {
+    background-image: url("../../imagenes/icono-menu-3-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-categories {
+    background-image: url("../../imagenes/icono-menu-4-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-course {
+    background-image: url("../../imagenes/icono-menu-5-fondo-color.png");
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .nav-icon {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 3px;
+    background-image: url("../../imagenes/icono-menu-1-fondo-blanco.png");
+  }
+  .nav-icon,
+  .nav-item .nav-link:hover > .nav-icon {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .icon-config {
+    background-image: url("../../imagenes/icono-menu-2-fondo-blanco.png");
+  }
+  .icon-user {
+    background-image: url("../../imagenes/icono-menu-3-fondo-blanco.png");
+  }
+  .icon-categories {
+    background-image: url("../../imagenes/icono-menu-4-fondo-blanco.png");
+  }
+  .icon-course {
+    background-image: url("../../imagenes/icono-menu-5-fondo-blanco.png");
+  }
+  .nav-item {
+    list-style: none;
+    border-radius: 10px;
+    &.active {
+      a {
+        color: #fff;
+        background-color: #4b209e;
+        border-radius: 10px;
+      }
+      .nav-link .nav-icon {
+        background-image: url("../../imagenes/icono-menu-1-fondo-color.png");
+      }
+      .nav-link .icon-config {
+        background-image: url("../../imagenes/icono-menu-2-fondo-color.png");
+      }
+      .nav-link .icon-user {
+        background-image: url("../../imagenes/icono-menu-3-fondo-color.png");
+      }
+      .nav-link .icon-categories {
+        background-image: url("../../imagenes/icono-menu-4-fondo-color.png");
+      }
+      .nav-link .icon-course {
+        background-image: url("../../imagenes/icono-menu-5-fondo-color.png");
+      }
+    }
+  }
+  .nav-item .nav-link {
+    display: flex;
+    padding: 0;
+    gap: 5px;
+    color: #4b209e;
+    font-weight: bold;
+    border-radius: 10px;
+    align-items: center;
+  }
+  .nav-item .nav-link:hover {
+    color: white;
+    background-color: #2c1868;
+    border-radius: 10px;
+  }
+  .nav-item .nav-link:hover > .nav-icon {
+    background-image: url("../../imagenes/icono-menu-1-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-config {
+    background-image: url("../../imagenes/icono-menu-2-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-user {
+    background-image: url("../../imagenes/icono-menu-3-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-categories {
+    background-image: url("../../imagenes/icono-menu-4-fondo-color.png");
+  }
+  .nav-item .nav-link:hover > .icon-course {
+    background-image: url("../../imagenes/icono-menu-5-fondo-color.png");
+  }
+  
+}
