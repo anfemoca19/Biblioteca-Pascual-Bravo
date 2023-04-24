@@ -1,10 +1,12 @@
-import Header from "../Header/Header";
-import styles from "../Home/Home.module.scss";
+import Header from "../../components/Header/header";
+import Layout from "../../components/Layout/Layout";
+import Navbar from "../../components/Navbar/navbar";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <Layout navBar={<Navbar />}></Layout>
     </>
   );
 }

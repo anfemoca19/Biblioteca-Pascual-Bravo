@@ -1,74 +1,71 @@
 import clsx from "clsx";
-import { useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { USER_PERMISSIONS } from "../../constants/user_const";
 import styles from "../Navbar/navbar.module.scss";
+import { Link, useLocation } from "react-router-dom";
+import { useRef } from "react";
 
-export default function Navbar({ className }) {
+export default function Navbar() {
   const myRef = useRef(null);
   const location = useLocation();
-
   let changeText = () => {
     myRef.current.style.display = "flex";
   };
-
   return (
-    <ul className={clsx("ps-0", styles["menu-mobile"])}>
-      <li
-        className={clsx("mb-2", styles["nav-item"], {
-          [styles.active]: location.pathname === "/dashboard",
-        })}
-      >
-        <Link
-          className={clsx("fs-6 mb-0 h1", styles["nav-link"])}
-          to="/dashboard"
-          onClick={() => {
-            changeText();
-          }}
+    <>
+      <ul className={clsx("ps-0")}>
+        <li
+          className={clsx("mb-2", styles["nav-item"], {
+            [styles.active]: location.pathname === "/dashboard",
+          })}
         >
-          <span className={clsx(styles["nav-icon"])}></span>
-          <span ref={myRef} className={clsx(styles["text-menu"])}>
-            Inicio
-          </span>
-        </Link>
-      </li>
-      <li
-        className={clsx("mb-2", styles["nav-item"], {
-          [styles.active]: location.pathname === "/configuration",
-        })}
-      >
-        <Link
-          className={clsx(
-            "fs-6 mb-0 h1",
-            styles["nav-link"],
-            styles["link-style"]
-          )}
-          to="/configuration"
+          <Link
+            className={clsx("fs-6 mb-0 h1", styles["nav-link"])}
+            to="/dashboard"
+            onClick={() => {
+              changeText();
+            }}
+          >
+            {/* <span className={clsx(styles["nav-icon"])}></span> */}
+            <span ref={myRef} className={clsx(styles["text-menu"])}>
+              Inicio
+            </span>
+          </Link>
+        </li>
+        <li
+          className={clsx("mb-2", styles["nav-item"], {
+            [styles.active]: location.pathname === "/configuration",
+          })}
         >
-          <span className={clsx(styles["nav-icon"], styles["icon-config"])} />
-          <span ref={myRef} className={clsx(styles["text-menu"])}>
-            Configuración
-          </span>
-        </Link>
-      </li>
+          <Link
+            className={clsx(
+              "fs-6 mb-0 h1",
+              styles["nav-link"],
+              styles["link-style"]
+            )}
+            to="/registerBooks"
+          >
+            {/* <span className={clsx(styles["nav-icon"], styles["icon-config"])} /> */}
+            <span ref={myRef} className={clsx(styles["text-menu"])}>
+              Registro de libros
+            </span>
+          </Link>
+        </li>
 
-      <li
-        className={clsx("mb-2", styles["nav-item"], {
-          [styles.active]: location.pathname === "/users",
-        })}
-      >
-        <Link
-          className={clsx("fs-6 ", styles["nav-link"], styles["link-style"])}
-          to="/users"
+        <li
+          className={clsx("mb-2", styles["nav-item"], {
+            [styles.active]: location.pathname === "/users",
+          })}
         >
-          <span className={clsx(styles["nav-icon"], styles["icon-user"])} />
-          <span ref={myRef} className={clsx(styles["text-menu"])}>
-            Usuarios
-          </span>
-        </Link>
-      </li>
+          <Link
+            className={clsx("fs-6 ", styles["nav-link"], styles["link-style"])}
+            to="/loadRecord"
+          >
+            {/* <span className={clsx(styles["nav-icon"], styles["icon-user"])} /> */}
+            <span ref={myRef} className={clsx(styles["text-menu"])}>
+              Registro de préstamos
+            </span>
+          </Link>
+        </li>
 
-      {USER_PERMISSIONS.isAdmin && (
         <li
           className={clsx("mb-2", styles["nav-item"], {
             [styles.active]: location.pathname === "/categories",
@@ -78,33 +75,33 @@ export default function Navbar({ className }) {
             className={clsx("fs-6 ", styles["nav-link"], styles["link-style"])}
             to="/categories"
           >
-            <span
+            {/* <span
               className={clsx(styles["nav-icon"], styles["icon-categories"])}
-            />
+            /> */}
             <span ref={myRef} className={clsx(styles["text-menu"])}>
-              Categorias
+              Mi perfil
             </span>
           </Link>
         </li>
-      )}
 
-      <li
-        className={clsx("mb-2", styles["nav-item"], {
-          [styles.active]: location.pathname === "/courses",
-        })}
-      >
-        <Link
-          className={clsx(
-            "fs-6 mb-0 h1",
-            styles["nav-link"],
-            styles["link-style"]
-          )}
-          to="/courses"
+        <li
+          className={clsx("mb-2", styles["nav-item"], {
+            [styles.active]: location.pathname === "/courses",
+          })}
         >
-          <span className={clsx(styles["nav-icon"], styles["icon-course"])} />
-          <span className={clsx(styles["text-menu"])}>Cursos</span>
-        </Link>
-      </li>
-    </ul>
+          <Link
+            className={clsx(
+              "fs-6 mb-0 h1",
+              styles["nav-link"],
+              styles["link-style"]
+            )}
+            to="/courses"
+          >
+            {/* <span className={clsx(styles["nav-icon"], styles["icon-course"])} /> */}
+            <span className={clsx(styles["text-menu"])}>Cerrar Sesión</span>
+          </Link>
+        </li>
+      </ul>
+    </>
   );
 }

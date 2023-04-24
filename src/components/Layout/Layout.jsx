@@ -8,14 +8,18 @@ const Layout = ({ navBar, children, sideBar }) => {
           {navBar}
         </div>
         <div
-          className={clsx("col-8 p-4", styles["container-responsive-children"])}
+          className={clsx(
+            "col-10 p-4",
+            styles["container-responsive-children"]
+          )}
         >
           {children}
         </div>
-        <div className={clsx("col-2 p-4", styles["style-sidebar"])}>
+        {/* <div className={clsx("col-2 p-4", styles["style-sidebar"])}>
           {sideBar}
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
+export default Layout;

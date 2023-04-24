@@ -1,0 +1,22 @@
+.container-title{
+  display: flex;
+  justify-content: center;
+}
+.title-style{
+  font-size: 40px;
+  color:#5634D1;
+}
+
+.box-container {
+  background-color: #f9fafb;
+  box-shadow: 0px 1px 4px 3px rgb(230 230 232 / 71%);
+  border-radius: 30px;
+  width: 90%;
+}
+.grid-container {
+  display: grid;
+  align-items: center;
+}
+.style-asterik{
+  color:#5634D1;
+}
