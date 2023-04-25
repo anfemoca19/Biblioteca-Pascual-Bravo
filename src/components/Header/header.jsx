@@ -6,6 +6,7 @@ import Input from "../UI/Input/input";
 import { BsSearch } from "react-icons/bs";
 
 export default function Header() {
+  window.localStorage.setItem("nombre", "Andres Felipe Morales Cardona");
   return (
     <div className={clsx("container-fluid mt-2")}>
       <div
@@ -28,7 +29,7 @@ export default function Header() {
           )}
         >
           <div className={clsx(styles["container-data-user"])}>
-            <span>Nombre super Administrador</span>
+            <span>{localStorage.nombre}</span>
           </div>
         </div>
         <div

@@ -48,7 +48,6 @@ export default function LoadRecord() {
     try {
       e.preventDefault();
       const { formHeaders } = await getHeaderForm();
-      // setDoc(doc(db, "books", window.crypto.randomUUID()), formHeaders);
       updateData("loan_record", formHeaders.id_prestamo, formHeaders);
       toast.success("El registro de prestamo fue guardado exitosamente");
     } catch (error) {}
@@ -83,7 +82,7 @@ export default function LoadRecord() {
       let result = loanList.find((item) => {
         return item.titulo_libro === idDiv;
       });
-      deleteData("books", result.id_libro);
+      deleteData("loan_record", result.id_libro);
       toast.success("El resgitro de prestamo  fue eliminado");
     } catch (error) {
       toast.error("Error al eliminar el libro", error);

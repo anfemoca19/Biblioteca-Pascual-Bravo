@@ -18,12 +18,8 @@ import TableLoanRecord from "./TableData/tableData";
 export default function MyProfile() {
   const [form, setForm] = useState(null);
   const [loanList, setLoanList] = useState([]);
-  const hedersForm = [
-    "nombre_presta",
-    "fecha_prestamo",
-    "nombre_libro",
-    "tiempo_prestamo",
-  ];
+  const [myData, setMyData] = useState([]);
+  const hedersForm = ["nombre", "identificacion", "programa"];
 
   useEffect(() => {
     async function fetchFunction() {
@@ -37,6 +33,11 @@ export default function MyProfile() {
   const loadCollection = async () => {
     let loanList = await getCollectionDocuments("loan_record");
     setLoanList(loanList);
+    let myData = await getCollectionDocuments("profile");
+    let miProfile = myData.find((item) => {
+      return item.nombre === `${localStorage.nombre}`;
+    });
+    setMyData(miProfile);
   };
 
   const setCurrentForm = async () => {
@@ -49,8 +50,8 @@ export default function MyProfile() {
       e.preventDefault();
       const { formHeaders } = await getHeaderForm();
       // setDoc(doc(db, "books", window.crypto.randomUUID()), formHeaders);
-      updateData("loan_record", formHeaders.id_prestamo, formHeaders);
-      toast.success("El registro de prestamo fue guardado exitosamente");
+      updateData("profile", formHeaders.id_prestamo, formHeaders);
+      toast.success("La creación de perfil fue guardado exitosamente");
     } catch (error) {}
   };
 
@@ -83,8 +84,8 @@ export default function MyProfile() {
       let result = loanList.find((item) => {
         return item.titulo_libro === idDiv;
       });
-      deleteData("books", result.id_libro);
-      toast.success("El resgitro de prestamo  fue eliminado");
+      deleteData("profile", result.id_libro);
+      toast.success("El perfil fue eliminado");
     } catch (error) {
       toast.error("Error al eliminar el libro", error);
     }
@@ -95,9 +96,7 @@ export default function MyProfile() {
       <Header />
       <Layout navBar={<Navbar />}>
         <div className={clsx(styles["container-title"])}>
-          <span className={clsx(styles["title-style"])}>
-            Registro de préstamos
-          </span>
+          <span className={clsx(styles["title-style"])}>Mi perfil</span>
         </div>
         <form
           id="currentForm"
@@ -114,35 +113,41 @@ export default function MyProfile() {
               <Label htmlFor="nombre_presta ">
                 Nombre <span className={clsx(styles["style-asterik"])}>*</span>
               </Label>
-              <Label htmlFor="fecha_prestamo">
+              <Label htmlFor="identificacion">
                 Identificacion
                 <span className={clsx(styles["style-asterik"])}>*</span>
               </Label>
-              <Label htmlFor="publicacion">
+              <Label htmlFor="publicacprogramaion">
                 Pograma <span className={clsx(styles["style-asterik"])}>*</span>
               </Label>
             </div>
             <div className={clsx("col-7", styles["grid-container"])}>
               <Input
                 id="nombre"
-                name="nombre_presta"
+                name="nombre"
                 className="mb-2 input-data-configuration"
                 type="text"
+                autoComplete="off"
                 required
+                value={myData.nombre}
               />
               <Input
                 id="identificacion"
                 name="identificacion"
                 className="mb-2 input-data-configuration"
                 type="number"
+                autoComplete="off"
                 required
+                value={myData.identificacion}
               />
               <Input
                 id="programa"
                 name="programa"
                 className="mb-2 input-data-configuration"
                 type="text"
+                autoComplete="off"
                 required
+                value={myData.programa}
               />
             </div>
             <div className={clsx("col-12 mt-3")}>
