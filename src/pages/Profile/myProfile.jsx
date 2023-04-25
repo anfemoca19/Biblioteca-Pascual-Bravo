@@ -49,7 +49,6 @@ export default function MyProfile() {
     try {
       e.preventDefault();
       const { formHeaders } = await getHeaderForm();
-      // setDoc(doc(db, "books", window.crypto.randomUUID()), formHeaders);
       updateData("profile", formHeaders.id_prestamo, formHeaders);
       toast.success("La creación de perfil fue guardado exitosamente");
     } catch (error) {}
@@ -84,7 +83,7 @@ export default function MyProfile() {
       let result = loanList.find((item) => {
         return item.titulo_libro === idDiv;
       });
-      deleteData("profile", result.id_libro);
+      deleteData("loan_record", result.id_libro);
       toast.success("El perfil fue eliminado");
     } catch (error) {
       toast.error("Error al eliminar el libro", error);
