@@ -30,18 +30,18 @@ export default function Register() {
           <div clas="form-outline ">
             <input
               type="text"
-              id="empresa"
+              id="identificacion"
               className={clsx("form-control", styles["style-input"])}
-              placeholder="Empresa"
+              placeholder="Identificación"
             />
           </div>
 
           <div clas="form-outline ">
             <input
-              type="number"
-              id="telefono"
+              type="text"
+              id="programa"
               className={clsx("form-control", styles["style-input"])}
-              placeholder="Telefono"
+              placeholder="Programa"
             />
           </div>
 
