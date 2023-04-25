@@ -1,4 +1,5 @@
-import db from "../firebaseConfig/firebase"
+import { toast } from "react-hot-toast";
+import { db } from "../firebaseConfig/firebase";
 import {
   collection,
   getDocs,
@@ -19,25 +20,14 @@ export const getCollectionDocuments = async (collectionName) => {
   return resulQuery;
 };
 
-export const updateDatas = async (collectionName, id, data) => {
-  console.log(db)
-return db.collection("books").doc("0").set({ nombre_autor: "Andres" });
-}
-
-
 
 export const updateData = async (collectionName, id, data) => {
-  await setDoc(doc(db, collectionName, id), data);
-};
-
-export const updateOnlySomeFields = async (collectionName, id, data) => {
   try {
-    await updateDoc(doc(db, collectionName, id), data)
-  } catch (e) {
-    console.log("error bd actualizando informacion", e);
-    alert("error bd", e);
-    return
+    await setDoc(doc(db, collectionName, id), data);
+  } catch (error) {
+    toast.error("No se guardo la informacion", error)
   }
+
 };
 
 export const deleteData = async (collectionData, id) => {
@@ -48,26 +38,4 @@ export const deleteData = async (collectionData, id) => {
   }
 };
 
-export const getCollectionWhere = async (
-  collectionData,
-  fieldName,
-  textToFind
-) => {
-  try {
-    const q = query(
-      collection(db, collectionData),
-      where(fieldName, "==", textToFind)
-    );
 
-    const querySnapshot = await getDocs(q);
-
-    let resulQuery = querySnapshot.docs.map((item) => {
-      return item.data();
-    });
-
-    return resulQuery;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-};

@@ -7,14 +7,17 @@ import Navbar from "../../components/Navbar/navbar";
 import styles from "../RegisterBooks/registerBooks.module.scss";
 import Button from "../../components/UI/Button";
 import { useEffect, useState } from "react";
-import { updateData } from "../../Utility/functionsDB";
+import {
+  deleteData,
+  getCollectionDocuments,
+  updateData,
+} from "../../Utility/functionsDB";
 import TableData from "../../components/TableData/tableData";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../firebaseConfig/firebase";
 import { Toaster, toast } from "react-hot-toast";
 
 export default function RegisterBook() {
   const [form, setForm] = useState(null);
+  const [booksList, setBooksList] = useState([]);
   const hedersForm = [
     "nombre_autor",
     "fecha_nacimiento",
@@ -23,16 +26,22 @@ export default function RegisterBook() {
     "id_libro",
     "editorial",
     "fecha_registro",
+    "fecha_publicacion",
   ];
 
   useEffect(() => {
     async function fetchFunction() {
+      await loadCollection();
       await setCurrentForm();
     }
 
     fetchFunction();
     return () => {};
   }, []);
+  const loadCollection = async () => {
+    let bookList = await getCollectionDocuments("books");
+    setBooksList(bookList);
+  };
 
   const setCurrentForm = async () => {
     let formulario = document.getElementById("currentForm");
@@ -43,13 +52,10 @@ export default function RegisterBook() {
     try {
       e.preventDefault();
       const { formHeaders } = await getHeaderForm();
-      setDoc(doc(db, "books", window.crypto.randomUUID()), formHeaders);
+      // setDoc(doc(db, "books", window.crypto.randomUUID()), formHeaders);
+      updateData("books", formHeaders.id_libro, formHeaders);
       toast.success("El libro fue guardado exitosamente");
     } catch (error) {}
-    // e.preventDefault();
-    // const { formHeaders } = await getHeaderForm();
-    // setDoc(doc(db, "books", window.crypto.randomUUID()), formHeaders);
-    // toast.success("El libro fue guardado exitosamente")
   };
 
   const getHeaderForm = async (input) => {
@@ -61,9 +67,30 @@ export default function RegisterBook() {
 
     const formHeaders = {
       ...headersObjet,
+      id_libro: window.crypto.randomUUID(),
     };
 
     return { formHeaders: formHeaders };
+  };
+
+  const editBook = (e) => {
+    console.log("llegamos");
+  };
+  const deleteBook = (e) => {
+    try {
+      let divInputs = e.target.closest("tr");
+      let idDiv =
+        parseInt(divInputs.children[1].innerText) ||
+        divInputs.children[1].innerText;
+
+      let result = booksList.find((item) => {
+        return item.titulo_libro === idDiv;
+      });
+      deleteData("books", result.id_libro);
+      toast.success("Libro eliminado");
+    } catch (error) {
+      toast.error("Error al eliminar el libro", error);
+    }
   };
 
   return (
@@ -108,10 +135,6 @@ export default function RegisterBook() {
                 Fecha de publicación{" "}
                 <span className={clsx(styles["style-asterik"])}>*</span>
               </Label>
-              <Label htmlFor="nombre_libro ">
-                id del libro{" "}
-                <span className={clsx(styles["style-asterik"])}>*</span>
-              </Label>{" "}
               <Label htmlFor="categoria">
                 Editorial{" "}
                 <span className={clsx(styles["style-asterik"])}>*</span>
@@ -161,14 +184,6 @@ export default function RegisterBook() {
                 onChange={() => {}}
               />
               <Input
-                id="id_libro"
-                name="id_libro"
-                className="mb-2 input-data-configuration"
-                type="text"
-                autoComplete="off"
-                onChange={() => {}}
-              />
-              <Input
                 id="editorial"
                 name="editorial"
                 className="mb-2 input-data-configuration"
@@ -191,7 +206,14 @@ export default function RegisterBook() {
         </form>
         <div className={clsx(styles["container-table"])}>
           <span className={clsx(styles["title-style"])}>Listado de Libros</span>
-          <TableData />
+          <TableData
+            booksList={booksList}
+            onClick={(e, type) => {
+              debugger;
+              if (type === "edit") editBook(e);
+              if (type === "delete") deleteBook(e);
+            }}
+          />
         </div>
       </Layout>
     </>

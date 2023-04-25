@@ -20,6 +20,9 @@
 .style-asterik{
   color:#5634D1;
 }
-.contaner-table{
+.container-table{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
 }
