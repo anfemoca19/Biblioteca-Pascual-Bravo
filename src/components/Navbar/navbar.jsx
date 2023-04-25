@@ -24,7 +24,6 @@ export default function Navbar() {
               changeText();
             }}
           >
-            {/* <span className={clsx(styles["nav-icon"])}></span> */}
             <span ref={myRef} className={clsx(styles["text-menu"])}>
               Inicio
             </span>
@@ -43,7 +42,6 @@ export default function Navbar() {
             )}
             to="/registerBooks"
           >
-            {/* <span className={clsx(styles["nav-icon"], styles["icon-config"])} /> */}
             <span ref={myRef} className={clsx(styles["text-menu"])}>
               Registro de libros
             </span>
@@ -59,7 +57,6 @@ export default function Navbar() {
             className={clsx("fs-6 ", styles["nav-link"], styles["link-style"])}
             to="/loadRecord"
           >
-            {/* <span className={clsx(styles["nav-icon"], styles["icon-user"])} /> */}
             <span ref={myRef} className={clsx(styles["text-menu"])}>
               Registro de préstamos
             </span>
@@ -73,11 +70,8 @@ export default function Navbar() {
         >
           <Link
             className={clsx("fs-6 ", styles["nav-link"], styles["link-style"])}
-            to="/categories"
+            to="/profile"
           >
-            {/* <span
-              className={clsx(styles["nav-icon"], styles["icon-categories"])}
-            /> */}
             <span ref={myRef} className={clsx(styles["text-menu"])}>
               Mi perfil
             </span>
@@ -95,7 +89,6 @@ export default function Navbar() {
               styles["nav-link"],
               styles["link-style"]
             )}
-            to="/courses"
           >
             {/* <span className={clsx(styles["nav-icon"], styles["icon-course"])} /> */}
             <span className={clsx(styles["text-menu"])}>Cerrar Sesión</span>

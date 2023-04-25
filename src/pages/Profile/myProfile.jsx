@@ -15,7 +15,7 @@ import {
 } from "../../Utility/functionsDB";
 import TableLoanRecord from "./TableData/tableData";
 
-export default function LoadRecord() {
+export default function MyProfile() {
   const [form, setForm] = useState(null);
   const [loanList, setLoanList] = useState([]);
   const hedersForm = [
@@ -112,47 +112,34 @@ export default function LoadRecord() {
           <div className={clsx("row text-center")}>
             <div className={clsx("col-5", styles["grid-container"])}>
               <Label htmlFor="nombre_presta ">
-                Nombre de quien lo presta{" "}
-                <span className={clsx(styles["style-asterik"])}>*</span>
+                Nombre <span className={clsx(styles["style-asterik"])}>*</span>
               </Label>
               <Label htmlFor="fecha_prestamo">
-                Fecha de prestamo
+                Identificacion
                 <span className={clsx(styles["style-asterik"])}>*</span>
               </Label>
               <Label htmlFor="publicacion">
-                Nombre del libro{" "}
-                <span className={clsx(styles["style-asterik"])}>*</span>
-              </Label>
-              <Label htmlFor="categoria">
-                Tiempo de prestamo{" "}
-                <span className={clsx(styles["style-asterik"])}>*</span>
+                Pograma <span className={clsx(styles["style-asterik"])}>*</span>
               </Label>
             </div>
             <div className={clsx("col-7", styles["grid-container"])}>
               <Input
-                id="nombre_presta "
+                id="nombre"
                 name="nombre_presta"
                 className="mb-2 input-data-configuration"
                 type="text"
                 required
               />
               <Input
-                id="fecha_prestamo"
-                name="fecha_prestamo"
+                id="identificacion"
+                name="identificacion"
                 className="mb-2 input-data-configuration"
-                type="date"
+                type="number"
                 required
               />
               <Input
-                id="nombre_libro"
-                name="nombre_libro"
-                className="mb-2 input-data-configuration"
-                type="text"
-                required
-              />
-              <Input
-                id="tiempo_prestamo"
-                name="tiempo_prestamo"
+                id="programa"
+                name="programa"
                 className="mb-2 input-data-configuration"
                 type="text"
                 required
@@ -165,7 +152,7 @@ export default function LoadRecord() {
         </form>
         <div className={clsx(styles["container-table"])}>
           <span className={clsx("mb-4", styles["title-style"])}>
-            Listado de libros prestados
+            Mis prestamos
           </span>
           <TableLoanRecord
             loanList={loanList}

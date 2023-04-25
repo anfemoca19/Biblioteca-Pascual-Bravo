@@ -12,10 +12,10 @@ import {
   getCollectionDocuments,
   updateData,
 } from "../../Utility/functionsDB";
-import TableData from "../../components/TableData/tableData";
 import { Toaster, toast } from "react-hot-toast";
+import TableBooks from "./TableData/tableData";
 
-export default function RegisterBook() {
+export default function RegisterBooks() {
   const [form, setForm] = useState(null);
   const [booksList, setBooksList] = useState([]);
   const hedersForm = [
@@ -76,6 +76,7 @@ export default function RegisterBook() {
   const editBook = (e) => {
     console.log("llegamos");
   };
+
   const deleteBook = (e) => {
     try {
       let divInputs = e.target.closest("tr");
@@ -151,14 +152,14 @@ export default function RegisterBook() {
                 className="mb-2 input-data-configuration"
                 type="text"
                 autoComplete="off"
-                onChange={() => {}}
+                required
               />
               <Input
                 id="fecha_nacimiento"
                 name="fecha_nacimiento"
                 className="mb-2 input-data-configuration"
                 type="date"
-                onChange={() => {}}
+                required
               />
               <Input
                 id="lugar_nacimineto"
@@ -166,7 +167,7 @@ export default function RegisterBook() {
                 className="mb-2 input-data-configuration"
                 type="text"
                 autoComplete="off"
-                onChange={() => {}}
+                required
               />
               <Input
                 id="titulo_libro"
@@ -174,14 +175,14 @@ export default function RegisterBook() {
                 className="mb-2 input-data-configuration"
                 type="text"
                 autoComplete="off"
-                onChange={() => {}}
+                required
               />
               <Input
                 id="fecha_publicacion"
                 name="fecha_publicacion"
                 className="mb-2 input-data-configuration"
                 type="date"
-                onChange={() => {}}
+                required
               />
               <Input
                 id="editorial"
@@ -189,14 +190,14 @@ export default function RegisterBook() {
                 className="mb-2 input-data-configuration"
                 type="text"
                 autoComplete="off"
-                onChange={() => {}}
+                required
               />
               <Input
                 id="fecha_registro"
                 name="fecha_registro"
                 className="mb-2 input-data-configuration"
                 type="date"
-                onChange={() => {}}
+                required
               />
             </div>
             <div className={clsx("col-12 mt-3")}>
@@ -205,11 +206,12 @@ export default function RegisterBook() {
           </div>
         </form>
         <div className={clsx(styles["container-table"])}>
-          <span className={clsx(styles["title-style"])}>Listado de Libros</span>
-          <TableData
+          <span className={clsx("mb-4", styles["title-style"])}>
+            Listado de libros
+          </span>
+          <TableBooks
             booksList={booksList}
             onClick={(e, type) => {
-              debugger;
               if (type === "edit") editBook(e);
               if (type === "delete") deleteBook(e);
             }}

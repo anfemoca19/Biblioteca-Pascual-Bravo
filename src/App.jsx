@@ -4,12 +4,14 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 import LoadRecord from "./pages/LoadRecord/loadRecord";
-import RegisterBook from "./pages/RegisterBooks/registerBooks";
+import RegisterBook from "./pages/RegisterBooks/resgiterBooks";
+import MyProfile from "./pages/Profile/myProfile";
 
 function App() {
   return (
     <BrowserRouter basename="/">
       <Routes>
+        <Route path="/profile" element={<MyProfile />} />
         <Route path="/registerBooks" element={<RegisterBook />} />
         <Route path="/loadRecord" element={<LoadRecord />} />
         <Route path="/register" element={<Register />} />
